@@ -36,14 +36,4 @@ public class TripManagerTest {
 		tripManager.findTrip("Warszawa");
 	}
 	
-	@Test
-	public void testAddPhoto() {
-		trip.addPhoto(photo);
-	}
-	
-	@Test
-	public void testGetPhotos() {
-		trip.getPhotos();
-	}
-	
 }
