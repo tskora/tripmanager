@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class TripManager {
 	
-	private Set<Trip> trips = new HashSet<Trip>();
+	public Set<Trip> trips = new HashSet<Trip>();
 
 	public void addTrip(Trip trip) {		
 	}
