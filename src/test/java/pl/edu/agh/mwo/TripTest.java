@@ -1,9 +1,5 @@
 package pl.edu.agh.mwo;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.Set;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,13 +17,11 @@ public class TripTest {
 	@Test
 	public void testAddPhoto() {
 		trip.addPhoto(photo);
-		assertEquals(trip.getPhotos().size(),1);
 	}
 	
 	@Test
 	public void testGetPhotos() {
-		Set<Photo> photos = trip.getPhotos();
-		assertEquals(photos.size(),0);
+		trip.getPhotos();
 	}
 
 }
