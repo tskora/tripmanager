@@ -1,5 +1,8 @@
 package pl.edu.agh.mwo;
 
+import static org.junit.Assert.assertEquals;
+import java.util.Set;
+
 import org.junit.Before;
 import org.junit.Test;
  
@@ -19,21 +22,28 @@ public class TripManagerTest {
 	@Test
 	public void testAddTrip() {
 		tripManager.addTrip(trip);
+		assertEquals(tripManager.getTrips().size(),1);
 	}
 	
 	@Test
 	public void testRemoveTrip() {
+		tripManager.addTrip(trip);
 		tripManager.removeTrip(trip);
+		assertEquals(tripManager.getTrips().size(),0);
 	}
 	
 	@Test
 	public void testGetTrips() {
-		tripManager.getTrips();
+		Set<Trip> t = tripManager.getTrips();
+		assertEquals(t.size(),0);
 	}
 	
 	@Test
 	public void testFindTrip() {
-		tripManager.findTrip("Warszawa");
+		trip.name = "Warszawa";
+		tripManager.addTrip(trip);
+		Trip t = tripManager.findTrip("Warszawa");
+		assertEquals(t.name, "Warszawa");
 	}
 	
 }
