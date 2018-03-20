@@ -1,6 +1,8 @@
 package pl.edu.agh.mwo;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import java.util.Set;
 
 import org.junit.Before;
@@ -44,6 +46,14 @@ public class TripManagerTest {
 		tripManager.addTrip(trip);
 		Trip t = tripManager.findTrip("Warszawa");
 		assertEquals(t.name, "Warszawa");
+	}
+	
+	@Test
+	public void testNoTripToBeFound() {
+		trip.name = "Kalisz";
+		tripManager.addTrip(trip);
+		Trip t = tripManager.findTrip("Warszawa");
+		assertNull(t);
 	}
 	
 }
